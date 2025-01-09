@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>Lego Collection - Register</title>
+</head>
+
+<body class=" text-gray-200 min-h-screen ">
+  <%- include('partials/navbar', { page: '/register' }) %>
+
+<div class="flex items-center justify-center px-4">
+
+
+  
+    <div class="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-8">
+      <!-- Form Header -->
+      <h1 class="text-2xl font-bold text-center mb-6">Register to Lego Collection</h1>
+      <% if (typeof successMessage === 'undefined' ) { %>
+        <form action="/register" method="POST" class="space-y-4">
+          <!-- User Name -->
+          <div>
+            <label for="userName" class="block text-sm font-medium">User Name</label>
+            <input 
+              type="text" 
+              id="userName" 
+              name="userName" 
+              placeholder="Enter your username" 
+              required 
+              class="input input-bordered w-full bg-gray-700 border-gray-600 text-gray-300"
+              value="<%= typeof userName !== 'undefined' ? userName : '' %>">
+          </div>
+          <!-- Password -->
+          <div>
+            <label for="password" class="block text-sm font-medium">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder="Enter your password" 
+              required 
+              class="input input-bordered w-full bg-gray-700 border-gray-600 text-gray-300">
+          </div>
+          <!-- Confirm Password -->
+          <div>
+            <label for="password2" class="block text-sm font-medium">Confirm Password</label>
+            <input 
+              type="password" 
+              id="password2" 
+              name="password2" 
+              placeholder="Re-enter your password" 
+              required 
+              class="input input-bordered w-full bg-gray-700 border-gray-600 text-gray-300">
+          </div>
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="Enter your email address" 
+              required 
+              class="input input-bordered w-full bg-gray-700 border-gray-600 text-gray-300">
+          </div>
+          <!-- Submit Button -->
+          <div>
+            <button 
+              type="submit" 
+              class="btn w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+              Register
+            </button>
+          </div>
+        </form>
+      <% } %>
+      <% if (typeof errorMessage !== 'undefined') { %>
+        <!-- Error Message -->
+        <div class="alert bg-red-500 text-white mt-4 p-4 rounded-lg">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            class="h-6 w-6 inline-block mr-2" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor">
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M9 12l2 2 4-4m0 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span><%= errorMessage %></span>
+        </div>
+      <% } %>
+      <% if (typeof successMessage !== 'undefined') { %>
+        <!-- Success Message -->
+        <div class="alert bg-green-500 text-white mt-4 p-4 rounded-lg">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            class="h-6 w-6 inline-block mr-2" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor">
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span><%= successMessage %></span>
+        </div>
+        <div class="mt-4 text-center">
+          <a href="/login" class="btn bg-green-600 hover:bg-green-700 text-white">
+            Proceed to Log in
+          </a>
+        </div>
+      <% } %>
+    </div>
+</div>
+</body>
+
+    </html>

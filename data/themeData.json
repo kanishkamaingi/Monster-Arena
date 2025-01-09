@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "Fire Elemental"
+    },
+    {
+        "id": "2",
+        "name": "Water Elemental"
+    },
+    {
+        "id": "3",
+        "name": "Earth Elemental"
+    },
+    {
+        "id": "4",
+        "name": "Darkness"
+    },
+    {
+        "id": "5",
+        "name": "Lightning"
+    }
+]

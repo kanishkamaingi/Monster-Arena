@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+    <link rel="stylesheet" href="/css/main.css" />
+
+</head>
+<body>
+    
+        <%- include('partials/navbar', {page: ''}) %>
+
+
+
+        <div class="container mx-auto px-4 max-w-3xl">
+          <div class="hero bg-base-300 py-4 rounded-lg">
+              <div class="hero-content text-center">
+                  <div class="max-w-md mx-auto">
+                      <h1 class="text-3xl font-bold mb-2 text-gray-100"> <%= set.name %> </h1>
+                      <p class="text-sm mb-4 text-gray-300">
+                          Below, you will find detailed information about the set: <%= set.name %>
+                      </p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="flex justify-center my-4">
+              <img class="w-[75%] max-w-xs rounded-md shadow-md" src="<%= set.img_url %>" alt="set image">
+          </div>
+      
+          <div class="p-4 rounded-lg text-gray-300">
+              <p><strong>Set Name:</strong> <%= set.name %></p>
+              <p><strong>Year Released:</strong> <%= set.year %></p>
+              <p><strong>Theme:</strong> <%= set.Theme.name %></p>
+              <p><strong>Power level:</strong> <%= set.power_level %></p>
+          </div>
+      
+          
+      
+          <div class="my-4 flex justify-center">
+              <a href="#" onclick="history.back(); return false;" class="btn btn-sm btn-error">Return</a>
+
+                
+              <% if (session.user) { %>
+              <% if (session.user.userName === set.userName) { %>
+                <a href="/monsters/edit/<%=set.monster_id%>" class=" btn mx-5 btn-sm btn-info">Edit</a>
+              <% }} %>
+              
+
+              <% if (session.user) { %>
+              <% if (session.user.userName !== set.userName) { %>
+                  <a href="/addChallenge/<%=set.monster_id%>" class=" btn mx-5 btn-sm btn-info">Challenge</a>
+                <% }} %>
+
+          </div>
+      </div>
+
+      
+
+      
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "assignment2",
+  "version": "1.0.0",
+  "description": "assignment 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch server.js",
+    "tw:build": "tailwindcss build -i ./public/css/tailwind.css -o ./public/css/main.css --watch"
+  },
+  "author": "Kanishka Maingi",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "bcryptjs": "^2.4.3",
+    "client-sessions": "^0.8.0",
+    "daisyui": "^4.12.13",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "http": "^0.0.1-security",
+    "mongoose": "^8.8.2",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.5",
+    "socket-io": "^1.0.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}

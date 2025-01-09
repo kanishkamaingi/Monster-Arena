@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body>
+    <%- include('partials/navbar', {page: ''}) %>
+    <div class="hero  ">
+        <div class="hero-content flex-col lg:flex-row">
+          <img
+            src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2o0bnNvc2U0cTVnajF0NmMyazd3bTE0OXphY3JmYXM3dmc3MXJsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0Dxuk20eU0bDYaxRR8/giphy.webp"
+            class="max-w-sm rounded-lg shadow-2xl" />
+          <div>
+            <h1 class="align-middle text-5xl font-bold">Error 500!</h1>
+            <p class="py-6">
+                <%=message %>
+            </p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

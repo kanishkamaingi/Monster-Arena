@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body>
+    <%- include('partials/navbar', {page: ''}) %>
+    <div class="hero  ">
+        <div class="hero-content flex-col lg:flex-row">
+          <img
+            src="https://media.giphy.com/media/14uQ3cOFteDaU/giphy.gif?cid=ecf05e47u9ldyo0tcj06fjzni28soal8rz8e43emxn8b0stt&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+            class="max-w-sm rounded-lg shadow-2xl" />
+          <div>
+            <h1 class="align-middle text-5xl font-bold">Error 404!</h1>
+            <p class="py-6">
+                <%=message %>
+            </p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

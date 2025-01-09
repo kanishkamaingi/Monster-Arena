@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battle Arena</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <%- include('partials/navbar', {page: ''}) %>
+  <body class=" text-white min-h-screen flex flex-col items-center">
+    <header class="w-full py-4  shadow-md">
+      <h1 class="text-center text-3xl font-bold">Battle Arena</h1>
+      
+      
+    </header>
+
+    <main class="container mx-auto px-4 py-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <!-- Monster One -->
+        <div class="text-center">
+          <h2 class="text-2xl font-bold"><%= battle.MonsterOne.name %></h2>
+          <img src="<%= battle.MonsterOne.img_url %>" alt="<%= battle.MonsterOne.name %>" class="w-64 h-64 object-cover rounded-md mx-auto" />
+          <button
+            id="voteMonsterOne"
+            class="btn btn-primary bg-blue-600 hover:bg-blue-700 px-6 py-2 mt-4"
+          >
+            Vote <%= battle.MonsterOne.name %>
+          </button>
+          <p class="mt-2">Votes: <span id="monsterOneVotes">0</span></p>
+        </div>
+
+        <div class="text-gray-500 text-xl font-bold">VS</div>
+
+        <!-- Monster Two -->
+        <div class="text-center">
+          <h2 class="text-2xl font-bold"><%= battle.MonsterTwo.name %></h2>
+          <img src="<%= battle.MonsterTwo.img_url %>" alt="<%= battle.MonsterTwo.name %>" class="w-64 h-64 object-cover rounded-md mx-auto" />
+          <button
+            id="voteMonsterTwo"
+            class="btn btn-primary bg-red-600 hover:bg-red-700 px-6 py-2 mt-4"
+          >
+            Vote <%= battle.MonsterTwo.name %>
+          </button>
+          <p class="mt-2">Votes: <span id="monsterTwoVotes">0</span></p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="w-full py-4 text-center text-sm text-gray-400">
+      © <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+      
+        socket.on('voteUpdate', (data) => {
+          document.getElementById("monsterOneVotes").innerText = data.monsterOneVotes;
+          document.getElementById("monsterTwoVotes").innerText = data.monsterTwoVotes;
+        });
+      
+        socket.on('voteLimitReached', (data) => {
+          alert(data.message); // Display the vote limit message
+        });
+      
+        document.getElementById("voteMonsterOne").addEventListener("click", () => {
+          socket.emit("vote", { battleId: "<%= battle.battle_id %>", monster: "monsterOne" });
+        });
+      
+        document.getElementById("voteMonsterTwo").addEventListener("click", () => {
+          socket.emit("vote", { battleId: "<%= battle.battle_id %>", monster: "monsterTwo" });
+        });
+      </script>
+      
+
+      
+  </body>
+</html>

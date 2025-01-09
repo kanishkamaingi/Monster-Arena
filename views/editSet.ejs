@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editSet</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@1.17.0/dist/full.js"></script>
+  </head>
+  <body class=" text-white">
+
+    
+    <%- include('partials/navbar', {page: ''}) %>
+
+    <div class="max-w-2xl mx-auto p-6 bg-gray-800 rounded-lg shadow-lg mt-10">
+      <form action="/monsters/edit" method="POST">
+        
+        <!-- Name Field -->
+        <div class="mb-4">
+          <label for="name" class="block text-lg font-medium text-gray-300">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Type here" class="input input-bordered w-full bg-gray-700 text-white" value="<%= set.name %>" required />
+        </div>
+        
+        <!-- Year Field -->
+        <div class="mb-4">
+          <label for="year" class="block text-lg font-medium text-gray-300">Year:</label>
+          <input type="number" id="year" name="year" class="input input-bordered w-full bg-gray-700 text-white" value="<%= set.year %>" required />
+        </div>
+        
+        <!-- Number of Parts Field -->
+        <div class="mb-4">
+          <label for="power_level" class="block text-lg font-medium text-gray-300">Power Level:</label>
+          <input type="number" id="power_level" name="power_level" class="input input-bordered w-full bg-gray-700 text-white" value="<%= set.power_level %>" required />
+        </div>
+        
+        <!-- Image URL Field -->
+        <div class="mb-4">
+          <label for="img_url" class="block text-lg font-medium text-gray-300">Image URL:</label>
+          <input type="url" id="img_url" name="img_url" class="input input-bordered w-full bg-gray-700 text-white" value="<%= set.img_url %>" required />
+        </div>
+        
+        <!-- Theme Select Field -->
+        <div class="mb-4">
+          <label for="theme_id" class="block text-lg font-medium text-gray-300">Theme:</label>
+          <select id="theme_id" name="theme_id" class="select select-bordered w-full bg-gray-700 text-white" required>
+            <% themes.forEach(theme => { %>
+              <option value="<%= theme.id %>" <%= (set.theme_id == theme.id) ? "selected" : "" %> >
+                <%= theme.name %>
+              </option>
+            <% }) %>
+          </select>
+        </div>
+        
+        <!-- Set Number Field (Read-only) -->
+        <div class="mb-4">
+          <label for="monster_id" class="block text-lg font-medium text-gray-300">Monster Number:</label>
+          <input type="text" id="monster_id" name="monster_id" value="<%= set.monster_id %>" readonly class="input input-bordered w-full bg-gray-600 text-gray-500 cursor-not-allowed" required />
+        </div>
+        
+        <!-- Submit and Delete Buttons -->
+        <div class="flex gap-4 mt-4">
+          <!-- Update Button -->
+          <button type="submit" class="btn btn-primary w-auto">Update Set</button>
+          <!-- Delete Button -->
+          <a href="/monsters/delete/<%= set.monster_id %>" class="btn  btn-error w-auto">Delete</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>

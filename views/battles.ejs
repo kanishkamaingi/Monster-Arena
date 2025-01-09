@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battles</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body>
+    <%- include('partials/navbar', {page: '/battles'}) %>
+    <body class=" text-gray-200 min-h-screen flex flex-col items-center">
+
+      <header class="w-full  py-4 shadow-md">
+        <h1 class="text-center text-3xl font-bold text-white">Monster Arena - Ongoing Battles</h1>
+      </header>
+    
+      <main class="container mx-auto px-4 py-6">
+        <!-- Battles Table -->
+        <div class="overflow-x-auto">
+          <table class="table w-full bg-gray-800 text-gray-200">
+            <thead>
+              <tr>
+                <th class="bg-gray-700">#</th>
+                <th class="bg-gray-700">Monster One</th>
+                <th class="bg-gray-700">Monster Two</th>
+                <th class="bg-gray-700">Status</th>
+                <th class="bg-gray-700">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Loop through the battles -->
+              <% battles.forEach((battle, index) => { %>
+                <tr>
+                  <th><%= index + 1 %></th>
+                  <td><%= battle.MonsterOne.name %></td>
+                  <td><%= battle.MonsterTwo.name %></td>
+                  <td><%= battle.status %></td>
+                  <td>
+                    <a
+                      href="/battles/<%= battle.battle_id %>"
+                      class="btn btn-primary btn-sm"
+                    >
+                      View Details
+                    </a>
+                  </td>
+                </tr>
+              <% }) %>
+              <!-- Show message if no battles exist -->
+              <% if (battles.length === 0) { %>
+                <tr>
+                  <td colspan="5" class="text-center text-gray-400">
+                    No ongoing battles at the moment.
+                  </td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    
+      <footer class="w-full py-4 text-center text-sm text-gray-400">
+        © <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
+      </footer>
+    </body>
+</body>
+</html>

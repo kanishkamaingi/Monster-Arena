@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>use history</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+ <body class="bg-base-200 text-base-content">
+    <!-- Navbar -->
+    <%- include('partials/navbar', {page: '/userHistory'}) %>
+
+    <!-- Hero Section -->
+    <div class="text-center py-8" style="background-color: #1D232A;">
+        <h1 class="text-2xl font-semibold text-white">Welcome, <%= session.user.userName %>!</h1>
+        <p class="text-base text-gray-400 mt-2">Email: <%= session.user.email %></p>
+      </div>
+      
+
+    <!-- Login History Table -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="overflow-x-auto">
+        <table class="table w-full table-zebra">
+          <thead>
+            <tr>
+              <th class="text-left">Login Date/Time</th>
+              <th class="text-left">Client Information</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% session.user.loginHistory.forEach(function(history) { %>
+              <tr>
+                <td><%= new Date(history.dateTime).toLocaleString() %></td>
+                <td><%= history.userAgent %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

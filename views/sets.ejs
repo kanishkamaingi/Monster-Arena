@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sets</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body>
+    <%- include('partials/navbar', {page:'/monsters/collection'}) %>
+
+
+    <div class="hero  ">
+        <div class="hero-content flex-col lg:flex-row text-center">
+
+          <div>
+            <h1 class=" text-5xl font-bold">Monsters</h1>
+           
+            <p class="py-6">
+                Browse the deadly collection of Monsters👾. 
+            </p>     
+            <div class="divider"> Browse </div>     
+            
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="flex justify-center">
+      <table class=" table table-zebra w-[80vw]">
+        <!-- head -->
+        
+        <tbody>
+          <!-- row 1 -->
+          
+          <% legoSets.forEach(data=>{ %>
+              <tr>
+                <td>
+                  <div class="avatar">
+                      <div class="ring-primary ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
+                          <img src="<%=data.img_url %>" />
+                      </div>
+                  </div>
+                  </td>
+
+                  <td>
+                      <%= data.name%>   |   <a href="?theme=<%=data.Theme.name%>" class="mx-3 btn btn-xs btn-outline btn-accent"><%=data.Theme.name%></a>
+                  </td>
+
+
+                  <td>
+                      year: <%=data.year%>
+                      <br>
+                      parts: <%=data.power_level%>
+                  </td>
+
+
+                  <td>
+                      <a href="/monsters/collection/<%=data.monster_id%>" class="btn btn-s btn-neutral">Details</a> 
+
+                  </td>
+              </tr>
+            <% }) %>
+
+        </tbody>
+      </table>
+      </div>
+
+</body>
+</html>

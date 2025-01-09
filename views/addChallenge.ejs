@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Challenge</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body class=" text-white min-h-screen flex flex-col items-center">
+  <%- include('partials/navbar', {page: ''}) %>
+
+  <header class=" py-4 shadow-md w-full">
+    <h1 class="text-center text-3xl font-bold">Challenge Monster: <%= set.monster_id %></h1>
+  </header>
+
+  <main class="container mx-auto px-4 py-6">
+    <% if (error) { %>
+      <div class="bg-red-500 text-white p-4 rounded mb-4">
+        <p><%= error %></p>
+      </div>
+    <% } %>
+
+    <form action="/addChallenge/<%= set.monster_id %>" method="POST" class=" p-6 rounded shadow-md">
+      <h2 class="text-xl font-bold mb-4">Enter Your Monster ID</h2>
+
+      <div class="mb-4">
+        <label for="userMonsterId" class="block text-gray-400">Your Monster ID:</label>
+        <input
+          type="text"
+          id="userMonsterId"
+          name="userMonsterId"
+          class="w-full px-4 py-2 rounded  text-white border border-gray-600"
+          placeholder="Enter your monster's ID"
+          required
+        >
+      </div>
+
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Challenge
+      </button>
+    </form>
+  </main>
+
+  <footer class=" py-4 text-center text-sm text-gray-400 w-full">
+    &copy; <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
+  </footer>
+</body>
+</html>

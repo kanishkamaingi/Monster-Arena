@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Arena</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <!-- navbar from daisy ui -->
+        <%- include('partials/navbar', {page: '/addSet'}) %>
+
+
+      <div class="container mx-auto">
+        
+        <div class="hero bg-base-200 min-h-15 my-10">
+            <div class="hero-content text-center">
+              <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Welcome</h1>
+                <p class="py-6">
+                    Unleash your inner monster and embark on a fascinating journey through the battles.
+                </p>
+                <button onclick="window.location.href='/monsters/collection'" class="btn btn-outline">Get started</button>
+              </div>
+            </div>
+          </div>
+
+      </div>
+      <footer class=" py-4 text-center text-sm text-gray-400 w-full">
+        &copy; <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
+      </footer>
+
+      
+</body>
+</html>

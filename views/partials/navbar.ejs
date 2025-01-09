@@ -1,0 +1,154 @@
+<div class="navbar bg-base-100 px-4 md:px-4 lg:px-8">
+  <div class="flex-1">
+    <a href="/" class="btn btn-ghost text-xl">Monster Arena 👾</a>
+  </div>
+  <div class="flex-none">
+    <!-- Mobile dropdown toggle -->
+    <div class="dropdown dropdown-end lg:hidden">
+      <label tabindex="0" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </label>
+      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52" style="z-index: 50;">
+        <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
+        <li><a class="<%= (page == '/battles') ? 'active' : '' %>" href="/battles">Battles</a></li>
+        <li><a class="<%= (page == '/monsters/collection') ? 'active' : '' %>" href="/monsters/collection">View Monsters</a></li>
+
+
+        <% if (session.user) { %>
+          <li>
+            <details>
+              <summary>Account: <%= session.user.userName %></summary>
+              <ul style="z-index: 90;" class="p-2 right-0">
+                <li>
+                  <a 
+                    class="<%= (page == '/monsters/add') ? 'active' : '' %>" 
+                    href="/monsters/add">
+                    Add a Monster
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    class="<%= (page == '/profile') ? 'active' : '' %>" 
+                    href="/Profile">
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    class="<%= (page == '/userHistory') ? 'active' : '' %>" 
+                    href="/userHistory">
+                    User History
+                  </a>
+                </li>
+                <li>
+                  <a href="/logout">Log Out</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+        <% } %>
+        
+
+        <% if (!session.user) { %>
+          <li>
+            <details>
+              <summary>Account</summary>
+              <ul  style="z-index: 90;"class="p-2 right-0">
+                <li>
+                  <a 
+                    class="<%= (page == '/login') ? 'active' : '' %>" 
+                    href="/login">
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    class="<%= (page == '/register') ? 'active' : '' %>" 
+                    href="/register">
+                    Register
+                  </a>
+                </li>
+              </ul>
+            </details>
+          </li>
+        <% } %>
+        
+        
+
+
+      </ul>
+    </div>
+    <!-- Normal navbar menu -->
+    <ul class="menu menu-horizontal px-1 hidden lg:flex">
+      <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
+      <li><a class="<%= (page == '/battles') ? 'active' : '' %>" href="/battles">Battles</a></li>
+
+      <!-- <li><a class="<%= (page == '/monsters/add') ? 'active' : '' %>" href="/monsters/add">Add to Collection</a></li> -->
+      <li><a class="<%= (page == '/monsters/collection') ? 'active' : '' %>" href="/monsters/collection">View monsters</a></li>
+
+       
+
+      <% if (session.user) { %>
+        <li>
+          <details>
+            <summary>Account: <%= session.user.userName %></summary>
+            <ul style="z-index: 90;" class="p-2 right-0">
+              <li>
+                <a 
+                  class="<%= (page == '/monsters/add') ? 'active' : '' %>" 
+                  href="/monsters/add">
+                  Add to Monster
+                </a>
+              </li>
+              <li>
+                <a 
+                  class="<%= (page == '/profile') ? 'active' : '' %>" 
+                  href="/Profile">
+                  Profile
+                </a>
+              </li>
+              <li>
+                <a 
+                  class="<%= (page == '/userHistory') ? 'active' : '' %>" 
+                  href="/userHistory">
+                  User History
+                </a>
+              </li>
+              <li>
+                <a href="/logout">Log Out</a>
+              </li>
+            </ul>
+          </details>
+        </li>
+      <% } %>
+      
+      <% if (!session.user) { %>
+        <li>
+          <details>
+            <summary>Account</summary>
+            <ul style="z-index: 90;" class="p-2 right-0">
+              <li>
+                <a 
+                  class="<%= (page == '/login') ? 'active' : '' %>" 
+                  href="/login">
+                  Login
+                </a>
+              </li>
+              <li>
+                <a 
+                  class="<%= (page == '/register') ? 'active' : '' %>" 
+                  href="/register">
+                  Register
+                </a>
+              </li>
+            </ul>
+          </details>
+        </li>
+      <% } %>
+      
+
+    </ul>
+  </div>
+</div>

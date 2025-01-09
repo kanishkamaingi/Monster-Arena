@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle Created</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+    <%- include('partials/navbar', {page: ''}) %>
+
+<body class=" text-white min-h-screen flex flex-col items-center">
+  <header class=" py-4 shadow-md w-full">
+    <h1 class="text-center text-3xl font-bold">Battle Created Successfully</h1>
+  </header>
+
+  <main class="container mx-auto px-4 py-6 text-center">
+    <h2 class="text-xl font-bold mb-4">Battle Details</h2>
+    <p>Monster One: <%= battle.monster_one_id %></p>
+    <p>Monster Two: <%= battle.monster_two_id %></p>
+    <p>Status: <%= battle.status %></p>
+
+    <a href="/battles" class="block mt-6 text-blue-500 hover:underline">View All Battles</a>
+  </main>
+
+  <footer class=" py-4 text-center text-sm text-gray-400 w-full">
+    &copy; <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
+  </footer>
+</body>
+</html>
+

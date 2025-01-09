@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    
+  </head>
+  <body class="bg-background min-h-screen ">
+    <%- include('partials/navbar', { page: '/login' }) %>
+    <div class="flex items-center justify-center text-white">
+
+
+      <div class="w-full max-w-md p-8 rounded-lg bg-gray-800 shadow-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+        <form action="/login" method="POST">
+          <!-- User Name Field -->
+          <div class="mb-4">
+            <label
+              for="userName"
+              class="block text-sm font-medium mb-2"
+              >User Name</label
+            >
+            <input
+              type="text"
+              id="userName"
+              name="userName"
+              class="input input-bordered w-full bg-gray-700 placeholder-gray-400"
+              placeholder="User Name"
+              required
+              value="<%= typeof userName !== 'undefined' ? userName : '' %>"
+            />
+          </div>
+          <!-- Password Field -->
+          <div class="mb-6">
+            <label
+              for="password"
+              class="block text-sm font-medium mb-2"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="input input-bordered w-full bg-gray-700 placeholder-gray-400"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <!-- Submit Button -->
+          <div>
+            <button
+              type="submit"
+              class="btn btn-primary w-full"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+  
+        <!-- Error Message -->
+        <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+          <div
+            class="alert alert-error mt-4 flex items-center gap-2 p-4 rounded-lg bg-red-800 text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="stroke-current shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span><%= errorMessage %></span>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

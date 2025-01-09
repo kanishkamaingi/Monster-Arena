@@ -1,0 +1,42 @@
+[
+    {
+        "monster_id": "M001",
+        "name": "Firefang",
+        "year": "2024",
+        "theme_id": "1",
+        "power_level": "85",
+        "img_url": "https://picsum.photos/seed/firefang/200/300"
+    },
+    {
+        "monster_id": "M002",
+        "name": "Shadowclaw",
+        "year": "2024",
+        "theme_id": "4",
+        "power_level": "92",
+        "img_url": "https://picsum.photos/seed/shadowclaw/200/300"
+    },
+    {
+        "monster_id": "M003",
+        "name": "Aquabeast",
+        "year": "2024",
+        "theme_id": "2",
+        "power_level": "78",
+        "img_url": "https://picsum.photos/seed/aquabeast/200/300"
+    },
+    {
+        "monster_id": "M004",
+        "name": "Stonecrusher",
+        "year": "2024",
+        "theme_id": "3",
+        "power_level": "88",
+        "img_url": "https://picsum.photos/seed/stonecrusher/200/300"
+    },
+    {
+        "monster_id": "M005",
+        "name": "Thunderwing",
+        "year": "2024",
+        "theme_id": "5",
+        "power_level": "95",
+        "img_url": "https://picsum.photos/seed/thunderwing/200/300"
+    }
+]

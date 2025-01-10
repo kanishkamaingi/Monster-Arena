@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +9,7 @@
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <%- include('partials/navbar', {page: ''}) %>
-  <body class=" text-white min-h-screen flex flex-col items-center">
+  <body class="  min-h-screen flex flex-col items-center">
     <header class="w-full py-4  shadow-md">
       <h1 class="text-center text-3xl font-bold">Battle Arena</h1>
       
@@ -16,7 +17,7 @@
     </header>
 
     <main class="container mx-auto px-4 py-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="flex flex-col md:flex-row items-center justify-evenly gap-8">
         <!-- Monster One -->
         <div class="text-center">
           <h2 class="text-2xl font-bold"><%= battle.MonsterOne.name %></h2>
@@ -30,7 +31,7 @@
           <p class="mt-2">Votes: <span id="monsterOneVotes">0</span></p>
         </div>
 
-        <div class="text-gray-500 text-xl font-bold">VS</div>
+        <div class=" text-xl font-bold">VS</div>
 
         <!-- Monster Two -->
         <div class="text-center">
@@ -47,7 +48,7 @@
       </div>
     </main>
 
-    <footer class="w-full py-4 text-center text-sm text-gray-400">
+    <footer class="w-full py-4 text-center text-sm ">
       © <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
     </footer>
 

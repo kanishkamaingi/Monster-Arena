@@ -11,9 +11,9 @@
         </svg>
       </label>
       <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52" style="z-index: 50;">
-        <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
-        <li><a class="<%= (page == '/battles') ? 'active' : '' %>" href="/battles">Battles</a></li>
         <li><a class="<%= (page == '/monsters/collection') ? 'active' : '' %>" href="/monsters/collection">View Monsters</a></li>
+        <li><a class="<%= (page == '/battles') ? 'active' : '' %>" href="/battles">Battles</a></li>
+        <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About Us</a></li>
 
 
         <% if (session.user) { %>
@@ -82,11 +82,11 @@
     </div>
     <!-- Normal navbar menu -->
     <ul class="menu menu-horizontal px-1 hidden lg:flex">
-      <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
-      <li><a class="<%= (page == '/battles') ? 'active' : '' %>" href="/battles">Battles</a></li>
-
-      <!-- <li><a class="<%= (page == '/monsters/add') ? 'active' : '' %>" href="/monsters/add">Add to Collection</a></li> -->
       <li><a class="<%= (page == '/monsters/collection') ? 'active' : '' %>" href="/monsters/collection">View monsters</a></li>
+      <li><a class="<%= (page == '/battles') ? 'active' : '' %>" href="/battles">Battles</a></li>
+      
+      <!-- <li><a class="<%= (page == '/monsters/add') ? 'active' : '' %>" href="/monsters/add">Add to Collection</a></li> -->
+      <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About Us</a></li>
 
        
 

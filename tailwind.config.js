@@ -2,7 +2,7 @@
 module.exports = {
   content: ['./views/**/*.ejs'], // content
   daisyui: {
-    themes: ['dark'],
+    themes: ['luxury'],
   },
   theme: {
     extend: {},

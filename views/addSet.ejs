@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Set</title>
+    <title>Add a Monster</title>
     <link rel="stylesheet" href="/css/main.css" />
-    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></script>
-    <script src="https://cdn.jsdelivr.net/npm/daisyui@1.17.0/dist/full.js"></script>
-  </head>
-  <body class=" text-white">
+</head>
+  <body >
 
     <%- include('partials/navbar', {page: '/monsters/add'}) %>
 
-    <div class="max-w-2xl mx-auto p-6 bg-gray-800 rounded-lg mt-10">
+    <div class="max-w-2xl mx-auto p-6 bg-base-200 rounded-lg mt-10">
       <form action="/monsters/add" method="POST">
         
         <!-- Name Field -->
         <div class="mb-4">
-          <label for="name" class="block text-lg font-medium text-gray-300">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Type here" class="input input-bordered w-full max-w-xs bg-gray-700 text-white" required />
+          <label for="name" class="block text-lg font-medium ">Name:</label>
+          <br>
+          <input type="text" id="name" name="name" placeholder="Your name here" class="input input-bordered input-ghost w-full bg-base-100" required />
         </div>
         
         <!-- Year Field -->
         <div class="mb-4">
-          <label for="year" class="block text-lg font-medium text-gray-300">Year:</label>
-          <input type="number" id="year" name="year" class="input input-bordered w-full max-w-xs bg-gray-700 text-white" required />
+          <label for="year" class="block text-lg font-medium ">Year:</label><br>
+          <input type="number" id="year" name="year" class="input input-bordered input-ghost w-full bg-base-100 " required />
         </div>
         
-        <!-- Number of Parts Field -->
+        <!-- Power Level Field -->
         <div class="mb-4">
-          <label for="power_level" class="block text-lg font-medium text-gray-300">Power Level:</label>
-          <input type="number" id="power_level" name="power_level" class="input input-bordered w-full max-w-xs bg-gray-700 text-white" required />
+          <label for="power_level" class="block text-lg font-medium ">Power Level:</label><br>
+          <input type="number" id="power_level" name="power_level" class="input input-bordered input-ghost w-full bg-base-100 " required />
         </div>
         
         <!-- Image URL Field -->
         <div class="mb-4">
-          <label for="img_url" class="block text-lg font-medium text-gray-300">Image URL:</label>
-          <input type="url" id="img_url" name="img_url" class="input input-bordered w-full max-w-xs bg-gray-700 text-white" required />
+          <label for="img_url" class="block text-lg font-medium ">Image URL:</label><br>
+          <input type="url" id="img_url" name="img_url" class="input input-bordered input-ghost w-full  bg-base-100" required />
         </div>
         
         <!-- Theme Select Field -->
         <div class="mb-4">
-          <label for="theme_id" class="block text-lg font-medium text-gray-300">Theme:</label>
-          <select id="theme_id" name="theme_id" class="select select-bordered w-full max-w-xs bg-gray-700 text-white" required>
+          <label for="theme_id" class="block text-lg font-medium ">Theme:</label>
+          <br>
+          <select id="theme_id" name="theme_id" class="select select-bordered w-full  bg-base-100" required>
             <% themes.forEach(theme => { %>
               <option value="<%= theme.id %>">
                 <%= theme.name %>
@@ -51,14 +51,14 @@
           </select>
         </div>
         
-        <!-- Set Number Field -->
+        <!-- Monster Number Field -->
         <div class="mb-4">
-          <label for="monster_id" class="block text-lg font-medium text-gray-300">Monster Number:</label>
-          <input type="text" id="monster_id" name="monster_id" class="input input-bordered w-full max-w-xs bg-gray-700 text-white" required />
+          <label for="monster_id" class="block text-lg">Monster Number:</label><br>
+          <input type="text" id="monster_id" name="monster_id" class="input input-bordered input-ghost w-full  bg-base-100 " required />
         </div>
         
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary w-full mt-4">Submit</button>
+        <button type="submit" class="btn btn-neutral w-full ">SUBMIT</button>
       </form>
     </div>
 

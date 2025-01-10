@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Battles</title>
     <link rel="stylesheet" href="/css/main.css" />
-    
   </head>
-  <body>
-    <%- include('partials/navbar', {page: '/battles'}) %>
-    <body class=" text-gray-200 min-h-screen flex flex-col items-center">
+  <body class="bg-background min-h-screen flex flex-col items-center">
+    <%- include('partials/navbar', { page: '/battles' }) %>
 
-      <header class="w-full  py-4 shadow-md">
-        <h1 class="text-center text-3xl font-bold text-white">Monster Arena - Ongoing Battles</h1>
-      </header>
+    <header class="w-full py-4 shadow-md bg-base-100">
+      <h1 class="text-center text-3xl font-bold ">Monster Arena - Ongoing Battles</h1>
+    </header>
     
-      <main class="container mx-auto px-4 py-6">
-        <!-- Battles Table -->
-        <div class="overflow-x-auto">
-          <table class="table w-full bg-gray-800 text-gray-200">
+    <main class="px-4 py-6">
+      <!-- Battles Table -->
+      
+        <div class="w-full max-w-4xl p-8 rounded bg-base-200 shadow-lg ">
+          <table class="table w-full bg-base-100 text-white">
             <thead>
               <tr>
-                <th class="bg-gray-700">#</th>
-                <th class="bg-gray-700">Monster One</th>
-                <th class="bg-gray-700">Monster Two</th>
-                <th class="bg-gray-700">Status</th>
-                <th class="bg-gray-700">Details</th>
+                <th >#</th>
+                <th >Monster One</th>
+                <th >Monster Two</th>
+                <th >Status</th>
+                <th >Details</th>
               </tr>
             </thead>
             <tbody>
@@ -37,10 +36,7 @@
                   <td><%= battle.MonsterTwo.name %></td>
                   <td><%= battle.status %></td>
                   <td>
-                    <a
-                      href="/battles/<%= battle.battle_id %>"
-                      class="btn btn-primary btn-sm"
-                    >
+                    <a href="/battles/<%= battle.battle_id %>" class="btn btn-ghost bg-base-100 btn-sm">
                       View Details
                     </a>
                   </td>
@@ -49,7 +45,7 @@
               <!-- Show message if no battles exist -->
               <% if (battles.length === 0) { %>
                 <tr>
-                  <td colspan="5" class="text-center text-gray-400">
+                  <td colspan="5" class="text-center ">
                     No ongoing battles at the moment.
                   </td>
                 </tr>
@@ -57,11 +53,11 @@
             </tbody>
           </table>
         </div>
-      </main>
-    
-      <footer class="w-full py-4 text-center text-sm text-gray-400">
-        © <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
-      </footer>
-    </body>
-</body>
+      
+    </main>
+
+    <footer class="w-full py-4 text-center text-sm  bg-base-100">
+      © <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
+    </footer>
+  </body>
 </html>

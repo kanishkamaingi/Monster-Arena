@@ -11,21 +11,65 @@
         <%- include('partials/navbar', {page: '/addSet'}) %>
 
 
-      <div class="container mx-auto">
-        
-        <div class="hero bg-base-200 min-h-15 my-10">
+        <div class="container mx-auto">
+          <div class="hero bg-base-200 min-h-15 my-10">
             <div class="hero-content text-center">
               <div class="max-w-md">
                 <h1 class="text-5xl font-bold">Welcome</h1>
                 <p class="py-6">
-                    Unleash your inner monster and embark on a fascinating journey through the battles.
+                  Unleash your inner monster and embark on a fascinating journey through the battles.
                 </p>
                 <button onclick="window.location.href='/monsters/collection'" class="btn btn-outline">Get started</button>
               </div>
             </div>
           </div>
-
-      </div>
+        
+          <!-- Features Section -->
+          <div class="py-10 bg-base-100">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <h2 class="text-xl font-bold">Create Unique Monsters</h2>
+                <p class="mt-2 text-white">Customize monsters with unique abilities and traits.</p>
+              </div>
+              <div>
+                <h2 class="text-xl font-bold">Battle with Opponents</h2>
+                <p class="mt-2 text-white">Challenge others in thrilling battles and rise to the top.</p>
+              </div>
+              <div>
+                <h2 class="text-xl font-bold">Track Progress</h2>
+                <p class="mt-2 text-white">Monitor your monster's stats and achievements.</p>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Call-to-Action Section -->
+          <div class="bg-base-200 py-10">
+            <div class="text-center">
+              <h2 class="text-3xl font-bold mb-4">Ready to Join the Battle?</h2>
+              <p class="mb-6">Start creating your monster and competing in epic battles today.</p>
+              <button onclick="window.location.href='/register'" class="btn btn-primary">Sign Up Now</button>
+              <p class="text-xs">Already have an account?
+              <button onclick="window.location.href='/login'" class="btn-xs btn-link">Sign In</button> </p> 
+            </div>
+          </div>
+        
+          <!-- Testimonials Section -->
+          <div class="py-10 bg-base-100">
+            <h2 class="text-2xl font-bold text-center mb-6">What Players Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="p-6 bg-base-200 rounded-lg shadow-lg text-white">
+                <p>"Monster Arena has been a game-changer for me. The battles are intense and exciting!"</p>
+                <p class="mt-4 text-right font-bold">- Alex</p>
+              </div>
+              <div class="p-6 bg-base-200 rounded-lg shadow-lg text-white">
+                <p>"I love creating my monsters and strategizing for battles. A must-play for gamers!"</p>
+                <p class="mt-4 text-right font-bold">- Riley</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      
       <footer class=" py-4 text-center text-sm  w-full">
         &copy; <%= new Date().getFullYear() %> Monster Arena. All rights reserved.
       </footer>
